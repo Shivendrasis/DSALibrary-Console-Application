@@ -1,49 +1,38 @@
 package DataStructures;
 
-public class Queue
-{
-
+public class Queue {
     static int max = 100;
     static int[] arr = new int[max];
-    static int  rear ,front = -1;
+    static int rear = -1, front = 0;  // Fix: Initialize front to 0
 
-
-
-    public  void enqueue(int data){
-
-        if(rear == max-1){
-            System.out.println("Queue is overflow");
+    public void enqueue(int data) {
+        if (rear == max - 1) {
+            System.out.println("Queue overflow");
             return;
         }
-        rear = rear+1;
-        arr[rear] = data;
-        System.out.println("Element queued: "+data);
+        arr[++rear] = data;
+        System.out.println("Element queued: " + data);
     }
 
-    public  int dequeue(){
-        if(rear == -1){
-            System.out.println("Queue is ");
-            return 0;
+    public int dequeue() {
+        if (rear < front) {  // Fix: Check if queue is empty
+            System.out.println("Queue is empty");
+            return Integer.MIN_VALUE;
         }
-            int front = arr[0];
-            for(int i=0; i<rear; i++){
-                arr[i] = arr[i+1];
-        }
-            rear--;
-            return front;
+        int val = arr[front];
+        front++;
+        return val;
     }
 
-    public  void display(){
-        if(front == -1){
+    public void display() {
+        if (rear < front) {
             System.out.println("Queue is empty");
             return;
-        }else {
-            for(int i=front; i<=rear; i++){
-                System.out.print(arr[i] + " ");
-            }
-            System.out.println();
         }
-
-
+        System.out.println("Queue elements are: ");
+        for (int i = front; i <= rear; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }

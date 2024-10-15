@@ -13,10 +13,11 @@ public class DSALibrary {
         int choice;
 
         do{
-            System.out.println("Enter your linkedlist operation: ");
-            System.out.println("1. Insert element");
-            System.out.println("2. Delete element");
-            System.out.println("3. Display element");
+            System.out.print("Enter your linkedlist operation: ");
+            System.out.println();
+            System.out.println("1. Insert element from list ");
+            System.out.println("2. Delete element from list ");
+            System.out.println("3. Display element ");
             System.out.println("4. Exist from linked list");
             choice = sc.nextInt();
 
@@ -53,10 +54,11 @@ public class DSALibrary {
     public static  void handleStack(){
         Stack stack = new Stack();
         Scanner sc = new Scanner(System.in);
-        int choise = sc.nextInt();
+        int choise ;
 
         do{
-            System.out.println("Enter your stack operation: ");
+            System.out.print("Enter your stack operation: ");
+            System.out.println();
             System.out.println("1. Enter element to push: ");
             System.out.println("2. Delete the element: ");
             System.out.println("3. Display the elements: ");
@@ -96,10 +98,11 @@ public class DSALibrary {
     public  static  void handleQueue(){
         Queue queue = new Queue();
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
+        int choice;
 
         do {
-            System.out.println("\nEnter your queue operation to perform : ");
+            System.out.print("Enter your queue operation to perform : ");
+            System.out.println();
             System.out.println("1. Enter element to enqueue: ");
             System.out.println("2. Dequeue the element: ");
             System.out.println("3. Display the queue ");
